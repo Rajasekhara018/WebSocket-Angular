@@ -1,0 +1,35 @@
+<div class="chat-container">
+    <mat-toolbar class="chatToolbar" style="background-color: #ae285d; color: white;">
+        <!-- <span style="font-size: 14px;">Axis Bank Support Chat</span> -->
+        <img src="../../assets/white-aha.svg" alt="">
+        <span class="spacer"></span>
+        <button mat-icon-button (click)="closePopup()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="cb-scroll">
+        <div class="cb-content">
+            <div class="advertisement"> </div>
+            <div class="welcome-msgs" *ngFor="let tString of typedStrings">
+                <p>{{tString}}</p>
+            </div>
+            <div class="welcome-msgs" style="text-align: left;"><p>{{userMessage1}}</p></div>
+            <div class="welcome-msgs" style="text-align: right;"><p>{{replayMsg}}</p></div>
+        </div>
+
+
+    </div>
+    <div class="chatInput" style="height: 60px; text-align: center; position: relative;">
+        <form name="loginForm" #loginForm='ngForm'>
+            <div style="height: 18px;">
+                <mat-form-field appearance="outline" style="width: 352px; height: 40px !important;" class="chtInput">
+                    <mat-label>Enter Message</mat-label>
+                    <input matInput type="text" name="userinput" [(ngModel)]="userMessage" autocomplete="off" #uname>
+                    <button mat-icon-button matSuffix (click)="startChat(uname.value)">
+                        <mat-icon>send</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

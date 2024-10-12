@@ -1,0 +1,218 @@
+.header {
+    position: fixed;
+    border-radius: 20px;
+    width: 338px;
+    height: 40px;
+}
+
+.chip-font {
+    font-size: 12px !important;
+}
+
+.leftView {
+    display: inline-block;
+    text-align: left;
+    padding: 6PX;
+    margin: 5px;
+    background-color: #F5F5F5;
+    border-radius: 9px 9px 9px 0px;
+}
+
+.rightView {
+    display: inline-block;
+    text-align: right;
+    padding: 6PX;
+    margin: 5px;
+    background-color: #ae285d;
+    border-radius: 9px 9px 0px 9px;
+}
+
+.ptag {
+    font-size: 12px !important;
+}
+
+.rounded {
+    border-radius: 20px;
+    margin-left: 18px;
+
+}
+
+p:first-child {
+    margin-top: 16px;
+}
+
+::ng-deep .chat-container {
+    height: auto;
+
+
+
+    .mat-mdc-dialog-container .mdc-dialog__surface {
+        border-radius: 8px !important;
+    }
+
+    .mat-mdc-dialog-container .chatToolbar {
+        border-radius: 8px 8px 0px 0px;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+        height: 0px !important;
+    }
+
+
+    .datePicker .mat-mdc-text-field-wrapper {
+        height: 40px;
+    }
+
+    .chatInput .mat-mdc-form-field-infix {
+        min-height: 40px;
+    }
+
+
+    .chatInput .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .chatInput .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+        top: 20px;
+    }
+
+    .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+        top: 28px;
+    }
+
+    .datePicker .mat-mdc-form-field-infix {
+        min-height: 40px;
+    }
+
+    .datePicker .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .datePicker .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+        top: 20px;
+    }
+
+    .mat-mdc-form-field .mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
+        top: 28px;
+    }
+
+    .custom-icon {
+        font-size: 0.5em;
+        /* Adjust the font size as needed */
+    }
+
+    .mat-datepicker-toggle-default-icon {
+        height: 20px !important;
+    }
+
+    .mat-mdc-icon-button .mat-mdc-button-persistent-ripple {
+        top: 10px !important;
+        left: 10px !important;
+        right: 10px !important;
+        bottom: 10px !important;
+        position: absolute;
+        pointer-events: none;
+        border-radius: inherit;
+    }
+
+    ::-webkit-scrollbar,
+    .scrollbar {
+        width: 4px !important;
+        height: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb,
+    .scrollbar-thumb {
+        background: #ae285d;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track,
+    .scrollbar-thumb {
+        box-shadow: inset 0 0 4px #ae285d;
+        border-radius: 4px;
+    }
+}
+
+
+
+
+
+
+
+.chatToolbar {
+
+    height: 48px;
+    padding: 0 8px 0 10px;
+
+}
+
+
+.chatToolbar button {
+    height: 36px;
+    width: 36px;
+    padding: 7px;
+}
+
+.chatToolbar .mat-icon {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.chatInput button {
+    height: 36px;
+    width: 36px;
+    padding: 7px;
+}
+
+.chatInput .mat-icon {
+    height: 20px;
+    width: 20px;
+    font-size: 20px;
+}
+
+.cb-scroll {
+    height: 392px;
+    padding: 0px 16px;
+    overflow: auto;
+    position: relative;
+    // overflow-y: scroll;
+}
+
+
+.advertisement {
+    margin-top: 16px;
+}
+
+.welcome-msgs p {
+    font-size: 12px;
+    padding: 6px;
+    margin: 0;
+    margin-bottom: 6px;
+    background-color: #F5F5F5;
+    border-radius: 9px 9px 9px 0px;
+    display: inline-block;
+}
+
+
+
+
+.chatInput {
+    border-radius: 16px;
+}
+
+
+.spacer {
+    flex: 1 1 auto !important;
+}
+
+.clearBtn {
+    background-color: #ae285d;
+}
