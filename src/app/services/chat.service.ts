@@ -25,7 +25,6 @@ export class ChatService {
   
 
   joinRoom(roomId: string) {
-    debugger
     this.stompClient.connect({}, ()=>{
       this.stompClient.subscribe(`/topic/${roomId}`, (messages: any) => {
         const messageContent = JSON.parse(messages.body);

@@ -9,7 +9,7 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-
+  initial: string = '';
   messageInput: string = '';
   userId: string="";
   messageList: any[] = [];
@@ -24,6 +24,12 @@ export class ChatComponent implements OnInit {
     this.userId = this.route.snapshot.params["userId"];
     this.chatService.joinRoom("ABC");
     this.lisenerMessage();
+    this.generateAvatar(this.userId);
+  }
+  generateAvatar(name:string) {
+    return name.charAt(0).toUpperCase();
+    // this.initial = name.charAt(0).toUpperCase();
+    // document.getElementById('avatar')!.innerText = firstInitial;
   }
 
   sendMessage() {

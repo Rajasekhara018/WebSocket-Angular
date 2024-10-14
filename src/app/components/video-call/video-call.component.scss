@@ -1,0 +1,208 @@
+video {
+    width: 10%;
+    background: grey;
+  }
+  
+  p.video-description {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+  
+  button {
+    margin: 1em;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  .centeredContainer {
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 0 16px;
+    width: 100%;
+  }
+  
+  .video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 650px;
+    background-color: #f0f0f0;
+    /* Add any additional styles for the placeholder */
+  }
+  
+  .drawer-container {
+    height: 90%;
+  }
+  
+  .drawer {
+    width: 80px;
+    /* Set the desired width for the drawer */
+  }
+  
+  .icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .heading {
+    color: #252525;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .left-span {
+    color: var(--gray-500, #ADB5BD);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 20px;
+    /* 142.857% */
+  }
+  
+  .right-span {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+    margin-top: 20px;
+  }
+  
+  .myVideo {
+    width: 100%;
+    /* Fill the entire width of the mat-card */
+    height: 100%;
+    /* Fill the entire height of the mat-card */
+    object-fit: cover;
+    /* Ensure the video fills the entire space without distortion */
+  }
+  
+  .video-container {
+    width: 100%;
+    /* Fill the entire width of the container */
+    height: 100%;
+    /* Fill the entire height of the container */
+    position: relative;
+    /* Position the video element */
+    overflow: hidden;
+    /* Ensure no overflow outside the container */
+  }
+  .centeredContainer {
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    padding: 0 16px;
+    width: 100%;
+  }
+  
+  .video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 650px;
+    height: 650px;
+    background-color: #f0f0f0;
+    /* Add any additional styles for the placeholder */
+  }
+  
+  .drawer-container {
+    height: 90%;
+  }
+  
+  .drawer {
+    width: 80px;
+    /* Set the desired width for the drawer */
+  }
+  
+  .icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .heading {
+    color: #252525;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .left-span {
+    color: var(--gray-500, #ADB5BD);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 20px;
+    /* 142.857% */
+  }
+  
+  .right-span {
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 142.857% */
+    margin-top: 20px;
+  }
+  
+  .myVideo {
+    width: 100%;
+    /* Fill the entire width of the mat-card */
+    height: 95%;
+    /* Fill the entire height of the mat-card */
+    object-fit: cover;
+    /* Ensure the video fills the entire space without distortion */
+  }
+  
+  .video-container {
+    width: 100%;
+    /* Fill the entire width of the container */
+    height: 95%;
+    /* Fill the entire height of the container */
+    position: relative;
+    /* Position the video element */
+    overflow: hidden;
+    /* Ensure no overflow outside the container */
+  }
+  /* Styles for the circular button */
+  .circle-btn {
+    width: 40px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
+    border-radius: 50%; /* Creates a circular shape */
+    background-color: red; /* Set the background color to red */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Remove default button border */
+    outline: none; /* Remove default button outline */
+    cursor: pointer;
+  }
+  
+  /* Styles for the icon inside the circle */
+  .icon-wrapper {
+    color: white; /* Set the color of the icon to white */
+  }
+  
+  
