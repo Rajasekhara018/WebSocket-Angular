@@ -1,0 +1,45 @@
+<!-- <div class="video-container">
+  <video #localVideo autoplay muted playsinline></video>
+  <video #remoteVideo autoplay playsinline></video>
+   <video #screenPreview autoplay></video>
+</div>
+
+<div class="controls">
+  <button (click)="startCall()">Start Call</button>
+  <button  (click)="shareScreen()">Share Screen</button>
+</div> -->
+<!-- Fullscreen remote screen share -->
+<div class="screen-share-container">
+    <!-- screenSharingActive &&  -->
+    <video #screenPreview autoplay *ngIf="showScreenPreview"></video>
+
+    <!-- Local webcam in bottom-right corner -->
+    <video #localVideo class="local-overlay" autoplay muted playsinline></video>
+</div>
+
+<!-- Controls -->
+<!-- <div class="controls">
+  <button (click)="startCall()">Start Call</button>
+  <button  (click)="shareScreen()">Share Screen</button>
+  <button  (click)="stopScreenSharing()">Stop Screen Share</button>
+</div> -->
+<div class="call-controls">
+    <!-- *ngIf="!peerConnectionReady"  -->
+    <button (click)="startCall()" class="control-button green">
+        <span class="material-icons">call</span>
+    </button>
+    <!-- *ngIf="peerConnectionReady" -->
+    <button (click)="stopCall()" class="control-button red">
+        <span class="material-icons">call_end</span>
+    </button>
+    <!-- [disabled]="!peerConnectionReady || screenSharingActive" -->
+    <button (click)="shareScreen()" class="control-button blue">
+        <span class="material-icons">screen_share</span>
+    </button>
+    <!-- *ngIf="screenSharingActive" -->
+    <button (click)="stopScreenSharing()" class="control-button gray">
+        <span class="material-icons">stop_screen_share</span>
+    </button>
+    <button (click)="stopRecording()">Stop & Upload</button>
+
+</div>

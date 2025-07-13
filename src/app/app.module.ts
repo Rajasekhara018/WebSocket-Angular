@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 import { VideoCallComponent } from './components/video-call/video-call.component';
 import { VideoShareComponent } from './components/video-share/video-share.component';
+import { NewVideoCallComponent } from './components/new-video-call/new-video-call.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { VideoShareComponent } from './components/video-share/video-share.compon
     ChatBotComponent,
     VideoCallComponent,
     VideoShareComponent,
+    NewVideoCallComponent
   ],
   imports: [
     BrowserModule,
