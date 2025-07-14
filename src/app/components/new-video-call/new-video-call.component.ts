@@ -8,136 +8,6 @@ import { Client, Stomp } from '@stomp/stompjs';
   styleUrls: ['./new-video-call.component.scss']
 })
 export class NewVideoCallComponent {
-  // @ViewChild('localVideo') localVideo!: ElementRef<HTMLVideoElement>;
-  // @ViewChild('remoteVideo') remoteVideo!: ElementRef<HTMLVideoElement>;
-
-  // private localStream!: MediaStream;
-  // private peerConnection!: RTCPeerConnection;
-  // private stompClient!: Client;
-  // public peerConnectionReady = false;
-  // private screenStream: MediaStream | null = null;
-  // private isScreenSharing = false;
-  // private readonly iceServers = {
-  //   iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
-  // };
-
-  //  ngOnInit(): void {
-  //   this.initWebSocket();
-  // }
-  // startCall() {
-  //   navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
-  //     this.localStream = stream;
-  //     this.localVideo.nativeElement.srcObject = stream;
-  //     this.initWebSocket();
-  //   });
-  // }
-
-  // // shareScreen() {
-  // //   navigator.mediaDevices.getDisplayMedia({ video: true }).then(screenStream => {
-  // //     const screenTrack = screenStream.getTracks()[0];
-  // //     const sender = this.peerConnection.getSenders().find(s => s.track?.kind === 'video');
-  // //     sender?.replaceTrack(screenTrack);
-  // //   });
-  // // }
-  // shareScreen() {
-  //   navigator.mediaDevices.getDisplayMedia({ video: true }).then(screenStream => {
-  //     const screenTrack = screenStream.getTracks()[0];
-
-  //     if (this.peerConnection) {
-  //       const sender = this.peerConnection.getSenders().find(s => s.track?.kind === 'video');
-  //       sender?.replaceTrack(screenTrack);
-  //     } else {
-  //       console.error('PeerConnection not initialized. Cannot share screen.');
-  //     }
-  //   }).catch(error => {
-  //     console.error('Error accessing display media:', error);
-  //   });
-  // }
-
-
-  // private initWebSocket() {
-  //   debugger
-  //   const socket = new SockJS('http://localhost:3001/ws');
-  //   this.stompClient = Stomp.over(socket);
-  //   // this.stompClient.connect({}, () => {
-  //   //   this.stompClient.subscribe('/topic/signal', (message) => {
-  //   //     const signal = JSON.parse(message.body);
-  //   //     this.handleSignal(signal);
-  //   //   });
-  //   //   this.createPeerConnection();
-  //   //   this.sendOffer();
-  //   // });
-  //   this.stompClient.onConnect = () => {
-  //     this.stompClient.subscribe('/topic/signal', (message) => {
-  //       const signal = JSON.parse(message.body);
-  //       this.handleSignal(signal);
-  //     });
-  //     this.createPeerConnection();
-  //     this.sendOffer();
-  //   };
-  //   this.stompClient.activate();
-  // }
-
-  // private createPeerConnection() {
-  //   debugger
-  //   this.peerConnection = new RTCPeerConnection(this.iceServers);
-  //   this.peerConnectionReady = true;
-  //   this.localStream.getTracks().forEach(track => {
-  //     this.peerConnection.addTrack(track, this.localStream);
-  //   });
-
-  //   this.peerConnection.onicecandidate = event => {
-  //     if (event.candidate) {
-  //       this.sendSignal('candidate', event.candidate);
-  //     }
-  //   };
-
-  //   this.peerConnection.ontrack = event => {
-  //     this.remoteVideo.nativeElement.srcObject = event.streams[0];
-  //   };
-  // }
-
-  // private sendOffer() {
-  //   this.peerConnection.createOffer().then(offer => {
-  //     this.peerConnection.setLocalDescription(offer);
-  //     this.sendSignal('offer', offer);
-  //   });
-  // }
-
-  // private handleSignal(signal: any) {
-  //   if (signal.type === 'offer') {
-  //     this.createPeerConnection();
-  //     this.peerConnection.setRemoteDescription(new RTCSessionDescription(signal.data))
-  //       .then(() => this.peerConnection.createAnswer())
-  //       .then(answer => {
-  //         this.peerConnection.setLocalDescription(answer);
-  //         this.sendSignal('answer', answer);
-  //       });
-  //   } else if (signal.type === 'answer') {
-  //     this.peerConnection.setRemoteDescription(new RTCSessionDescription(signal.data));
-  //   } else if (signal.type === 'candidate') {
-  //     this.peerConnection.addIceCandidate(new RTCIceCandidate(signal.data));
-  //   }
-  // }
-
-  // private sendSignal(type: string, data: any) {
-  //   // this.stompClient.send('/app/signal', {}, JSON.stringify({
-  //   //   type: type,
-  //   //   sender: 'user1',
-  //   //   receiver: 'user2',
-  //   //   data: data
-  //   // }));
-  //   this.stompClient.publish({
-  //     destination: '/app/signal',
-  //     body: JSON.stringify({
-  //       type: type,
-  //       sender: 'user1',
-  //       receiver: 'user2',
-  //       data: data
-  //     })
-  //   });
-
-  // }
   @ViewChild('localVideo') localVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('remoteVideo') remoteVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('screenPreview') screenPreview!: ElementRef<HTMLVideoElement>;
@@ -176,26 +46,6 @@ export class NewVideoCallComponent {
     this.createPeerConnection();
     this.sendOffer();
   }
-
-  // private createPeerConnection() {
-  //   this.peerConnection = new RTCPeerConnection(this.iceServers);
-  //   this.peerConnection.onicecandidate = (event) => {
-  //     if (event.candidate) {
-  //       this.sendIceCandidate(event.candidate);
-  //     }
-  //   };
-
-  //   this.peerConnection.ontrack = (event) => {
-  //     if (event.track.kind === 'video') {
-  //       this.remoteVideo.nativeElement.srcObject = event.streams[0];
-  //     }
-  //   };
-
-  //   this.localStream.getTracks().forEach(track => {
-  //     this.peerConnection.addTrack(track, this.localStream);
-  //   });
-  // }
-
   private sendOffer() {
     const offerOptions = {
       offerToReceiveVideo: true,
@@ -210,7 +60,6 @@ export class NewVideoCallComponent {
       console.error('Error creating offer:', error);
     });
   }
-
   private sendSignal(type: string, data: any) {
     this.stompClient.publish({
       destination: '/app/signal',
@@ -273,16 +122,6 @@ export class NewVideoCallComponent {
       })
     });
   }
-
-  // startCall() {
-  //   navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
-  //     this.localStream = stream;
-  //     this.localVideo.nativeElement.srcObject = stream;
-  //   }).catch(error => {
-  //     console.error('Error accessing media devices:', error);
-  //   });
-  // }
-
   startCall() {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then(stream => {
@@ -324,19 +163,6 @@ export class NewVideoCallComponent {
 
   showScreenPreview!: boolean;
   shareScreen() {
-    // if (this.isScreenSharing) {
-    //   // Stop screen sharing
-    //   this.stopScreenSharing();
-    // } else {
-    //   // Start screen sharing
-    //   navigator.mediaDevices.getDisplayMedia({ video: true }).then(screenStream => {
-    //     this.screenStream = screenStream;
-    //     this.screenPreview.nativeElement.srcObject = screenStream;
-    //     this.replaceVideoTrack(screenStream);
-    //   }).catch(error => {
-    //     console.error('Error accessing screen:', error);
-    //   });
-    // }
     navigator.mediaDevices.getDisplayMedia({ video: true })
       .then(stream => {
         const trackLabel = stream.getVideoTracks()[0].label;
@@ -397,9 +223,6 @@ export class NewVideoCallComponent {
   }
 
   stopRecording() {
-    // if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
-    //   this.mediaRecorder.stop();
-    // }
     console.log('Stopping recording...'); // ✅ Add debug log
     if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
       this.mediaRecorder.stop(); // ⬅️ triggers onstop
